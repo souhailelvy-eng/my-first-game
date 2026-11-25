@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>لعبة النقاط</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial;
+            padding: 50px;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        #score {
+            font-size: 45px;
+            color: green;
+        }
+
+        button {
+            padding: 15px 25px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 لعبة جمع النقاط</h1>
+
+    <p>نقاطك الحالية:</p>
+
+    <h2 id="score">0</h2>
+
+    <button onclick="addPoint()">
+        + اجمع نقطة
+    </button>
+
+    <button onclick="resetScore()">
+        إعادة اللعب
+    </button>
+
+    <script>
+
+        let score = 0;
+
+        function addPoint() {
+            score++;
+
+            document.getElementById("score").innerText = score;
+        }
+
+        function resetScore() {
+            score = 0;
+
+            document.getElementById("score").innerText = score;
+        }
+
+    </script>
+
+</body>
+</html>
