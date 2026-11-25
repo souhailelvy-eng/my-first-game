@@ -1,4 +1,120 @@
-!DOCTYPE html>
+!ementById("score").innerText = score;
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لعبة الضغط</title>
+
+<style>
+body {
+  background: #172554;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  padding-top: 50px;
+}
+
+h1 {
+  color: #facc15;
+}
+
+button {
+  padding: 18px 35px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#clickBtn {
+  background: #22c55e;
+  color: white;
+}
+
+#resetBtn {
+  background: #ef4444;
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎮 لعبة الضغط</h1>
+
+<h2>النقاط: <span id="score">0</span></h2>
+
+<h2>المستوى: <span id="level">1</span></h2>
+
+<button id="clickBtn" onclick="addPoint()">
+اضغط هنا!
+</button>
+
+<br>
+
+<button id="resetBtn" onclick="resetGame()">
+إعادة اللعب
+</button>
+
+<h2 id="message">ابدأ اللعب!</h2>
+
+<script>
+
+let score = 0;
+let level = 1;
+
+function addPoint() {
+
+  score++;
+
+  level = Math.floor(score / 10) + 1;
+
+  document.getElementById("score").innerText = score;
+
+  document.getElementById("level").innerText = level;
+
+  if (score >= 100) {
+    document.getElementById("message").innerText =
+    "🏆 مبروك! لقد فزت!";
+  }
+
+  else if (score % 10 === 0) {
+    document.getElementById("message").innerText =
+    "🎉 انتقلت إلى مستوى جديد!";
+  }
+
+  else {
+    document.getElementById("message").innerText =
+    "استمر! أنت رائع!";
+  }
+
+}
+
+function resetGame() {
+
+  score = 0;
+  level = 1;
+
+  document.getElementById("score").innerText = 0;
+  document.getElementById("level").innerText = 1;
+
+  document.getElementById("message").innerText =
+  "ابدأ اللعب من جديد!";
+
+}
+
+</script>
+
+</body>
+</html>
+
+        }
+
+    </script>
+
+</body>DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -135,10 +251,5 @@
         function resetScore() {
             score = 0;
 
-            document.getElementById("score").innerText = score;
-        }
-
-    </script>
-
-</body>
+            document.getEl
 </html>
